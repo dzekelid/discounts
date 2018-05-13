@@ -21,15 +21,17 @@ modified: "2018-05-13"
 url: https://raw.githubusercontent.com/streamdata-gallery-topics/discounts/master/_listings/square/apis.md
 specificationVersion: "0.14"
 apis:
-- name: Square Connect API Put Location Discounts Discount
-  description: Modifies the details of an existing discount.
+- name: Square Connect API Delete Location Discounts Discount
+  description: Delete location discounts discount.
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/square-logo.png
   humanURL: https://squareup.com
   baseURL: https://connect.squareup.com/v1/
   tags: Discounts
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-topics/discounts/master/_listings/square/location-id-discounts-discount-id-put.md
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/discounts/master/_listings/square/location-id-discounts-discount-id-delete.md
+  - type: x-postman-collection
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/discounts/master/_listings/square/location-id-discounts-discount-id-delete-postman.md
 x-common:
 - type: x-base
   url: https://connect.squareup.com
