@@ -21,15 +21,17 @@ modified: "2018-05-13"
 url: https://raw.githubusercontent.com/streamdata-gallery-topics/discounts/master/_listings/square/apis.md
 specificationVersion: "0.14"
 apis:
-- name: Square Connect API Post Location Discounts
-  description: Post location discounts.
+- name: Square Connect API Get Location Discounts
+  description: Lists all of a location's discounts.
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/square-logo.png
   humanURL: https://squareup.com
   baseURL: https://connect.squareup.com/v1/
   tags: Discounts
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-topics/discounts/master/_listings/square/location-id-discounts-post.md
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/discounts/master/_listings/square/location-id-discounts-get.md
+  - type: x-postman-collection
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/discounts/master/_listings/square/location-id-discounts-get-postman.md
 x-common:
 - type: x-base
   url: https://connect.squareup.com
