@@ -3,11 +3,11 @@ swagger: "2.0"
 x-collection-name: Eventbrite
 x-complete: 0
 info:
-  title: Eventbrite Delete Events  Discounts Discount
+  title: Eventbrite Delete Events Discounts Discount
   description: Please use https://www.eventbrite.com/developer/v3/endpoints/cross_event_discounts/#ebapi-delete-discounts-discount-id
   version: 1.0.0
-host: www.eventbriteapi.com
-basePath: /v3
+host: www.eventbrite.com
+basePath: /%7Bdata-type%7D/
 schemes:
 - http
 produces:
@@ -26,9 +26,9 @@ paths:
           description: OK
       tags:
       - Discounts
-      - Discount
+      - :discount
     post:
-      summary: Add Discounts Discount
+      summary: Post Discounts Discount
       description: Updates the discount with the specified :discount_id. Returns the
         updated cross_event_discount. The fields sent are the ones that are going
         to be updated, the fields that are not sent will be unchanged. The same conditions
@@ -81,7 +81,7 @@ paths:
           description: OK
       tags:
       - Discounts
-      - Discount
+      - :discount
     delete:
       summary: Delete Discounts Discount
       description: |-
@@ -94,10 +94,10 @@ paths:
           description: OK
       tags:
       - Discounts
-      - Discount
+      - :discount
   /discounts/:
     post:
-      summary: Add Discounts
+      summary: Post Discounts
       description: Creates a discount. Returns the created cross_event_discount.
       operationId: postDiscounts
       x-api-path-slug: discounts-post
@@ -161,7 +161,7 @@ paths:
       - Discounts
   /events/{id}/discounts/:
     get:
-      summary: Get Events  Discounts
+      summary: Get Events Discounts
       description: Please use https://www.eventbrite.com/developer/v3/endpoints/users/#ebapi-get-users-user-id-discounts
       operationId: getEventsDiscounts
       x-api-path-slug: eventsiddiscounts-get
@@ -170,10 +170,9 @@ paths:
           description: OK
       tags:
       - Events
-      - ""
       - Discounts
     post:
-      summary: Add Events  Discounts
+      summary: Post Events Discounts
       description: Please use https://www.eventbrite.com/developer/v3/endpoints/cross_event_discounts/#ebapi-post-discounts
       operationId: postEventsDiscounts
       x-api-path-slug: eventsiddiscounts-post
@@ -182,11 +181,10 @@ paths:
           description: OK
       tags:
       - Events
-      - ""
       - Discounts
   /events/{id}/discounts/:discount_id/:
     get:
-      summary: Get Events  Discounts Discount
+      summary: Get Events Discounts Discount
       description: Please use https://www.eventbrite.com/developer/v3/endpoints/cross_event_discounts/#ebapi-get-discounts-discount-id
       operationId: getEventsDiscountsDiscount
       x-api-path-slug: eventsiddiscountsdiscount-id-get
@@ -195,11 +193,10 @@ paths:
           description: OK
       tags:
       - Events
-      - ""
       - Discounts
-      - Discount
+      - :discount
     post:
-      summary: Add Events  Discounts Discount
+      summary: Post Events Discounts Discount
       description: Please use https://www.eventbrite.com/developer/v3/endpoints/cross_event_discounts/#ebapi-post-discounts-discount-id
       operationId: postEventsDiscountsDiscount
       x-api-path-slug: eventsiddiscountsdiscount-id-post
@@ -208,11 +205,10 @@ paths:
           description: OK
       tags:
       - Events
-      - ""
       - Discounts
-      - Discount
+      - :discount
     delete:
-      summary: Delete Events  Discounts Discount
+      summary: Delete Events Discounts Discount
       description: Please use https://www.eventbrite.com/developer/v3/endpoints/cross_event_discounts/#ebapi-delete-discounts-discount-id
       operationId: deleteEventsDiscountsDiscount
       x-api-path-slug: eventsiddiscountsdiscount-id-delete
@@ -221,9 +217,8 @@ paths:
           description: OK
       tags:
       - Events
-      - ""
       - Discounts
-      - Discount
+      - :discount
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

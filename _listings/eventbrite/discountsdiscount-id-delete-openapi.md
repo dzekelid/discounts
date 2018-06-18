@@ -8,8 +8,8 @@ info:
     Deletes the cross_event_discount with the specified :discount_id.
     Only unused discounts can be deleted.
   version: 1.0.0
-host: www.eventbriteapi.com
-basePath: /v3
+host: www.eventbrite.com
+basePath: /%7Bdata-type%7D/
 schemes:
 - http
 produces:
@@ -28,9 +28,9 @@ paths:
           description: OK
       tags:
       - Discounts
-      - Discount
+      - :discount
     post:
-      summary: Add Discounts Discount
+      summary: Post Discounts Discount
       description: Updates the discount with the specified :discount_id. Returns the
         updated cross_event_discount. The fields sent are the ones that are going
         to be updated, the fields that are not sent will be unchanged. The same conditions
@@ -83,7 +83,7 @@ paths:
           description: OK
       tags:
       - Discounts
-      - Discount
+      - :discount
     delete:
       summary: Delete Discounts Discount
       description: |-
@@ -96,10 +96,10 @@ paths:
           description: OK
       tags:
       - Discounts
-      - Discount
+      - :discount
   /discounts/:
     post:
-      summary: Add Discounts
+      summary: Post Discounts
       description: Creates a discount. Returns the created cross_event_discount.
       operationId: postDiscounts
       x-api-path-slug: discounts-post

@@ -3,8 +3,8 @@ swagger: "2.0"
 x-collection-name: Eventbrite
 x-complete: 0
 info:
-  title: Eventbrite Get Events Public Discounts
-  description: Please use https://www.eventbrite.com/developer/v3/endpoints/users/#ebapi-get-users-user-id-discounts
+  title: Eventbrite Get Event List Discounts
+  description: This method returns a list of discounts for a given event.
   version: 1.0.0
 host: www.eventbrite.com
 basePath: /%7Bdata-type%7D/
@@ -231,6 +231,128 @@ paths:
       tags:
       - Events
       - Public
+      - Discounts
+    post:
+      summary: Post Events Public Discounts
+      description: Please use https://www.eventbrite.com/developer/v3/endpoints/cross_event_discounts/#ebapi-post-discounts
+      operationId: postEventsPublicDiscounts
+      x-api-path-slug: eventsidpublic-discounts-post
+      responses:
+        200:
+          description: OK
+      tags:
+      - Events
+      - Public
+      - Discounts
+  /events/{id}/public_discounts/:discount_id/:
+    get:
+      summary: Get Events Public Discounts Discount
+      description: Please use https://www.eventbrite.com/developer/v3/endpoints/cross_event_discounts/#ebapi-get-discounts-discount-id
+      operationId: getEventsPublicDiscountsDiscount
+      x-api-path-slug: eventsidpublic-discountsdiscount-id-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Events
+      - Public
+      - Discounts
+      - :discount
+    post:
+      summary: Post Events Public Discounts Discount
+      description: Please use https://www.eventbrite.com/developer/v3/endpoints/cross_event_discounts/#ebapi-post-discounts-discount-id
+      operationId: postEventsPublicDiscountsDiscount
+      x-api-path-slug: eventsidpublic-discountsdiscount-id-post
+      responses:
+        200:
+          description: OK
+      tags:
+      - Events
+      - Public
+      - Discounts
+      - :discount
+    delete:
+      summary: Delete Events Public Discounts Discount
+      description: Please use https://www.eventbrite.com/developer/v3/endpoints/cross_event_discounts/#ebapi-delete-discounts-discount-id
+      operationId: deleteEventsPublicDiscountsDiscount
+      x-api-path-slug: eventsidpublic-discountsdiscount-id-delete
+      responses:
+        200:
+          description: OK
+      tags:
+      - Events
+      - Public
+      - Discounts
+      - :discount
+  /users/:user_id/discounts/:
+    get:
+      summary: Get Users User Discounts
+      description: |-
+        Returns a paginated response of cross_event_discount for the specified user.
+        This operation is only supported for the currently authenticated user. The alias me (/users/me/) may be used.
+      operationId: getUsersUserDiscounts
+      x-api-path-slug: usersuser-iddiscounts-get
+      parameters:
+      - in: query
+        name: code
+        description: Search term to find discounts by code/name, in an exact match
+          behavior
+        type: query
+      - in: query
+        name: code_filter
+        description: Search term to filter discounts by name
+        type: query
+      - in: query
+        name: event_id
+        description: ID of the event
+        type: query
+      - in: query
+        name: order_by
+        description: 'How to order the results (Valid choices are: code_asc, code_desc,
+          discount_type_asc, discount_type_desc, start_asc, or start_desc)'
+        type: query
+      - in: query
+        name: page_size
+        description: Number of records in each page
+        type: query
+      - in: query
+        name: scope
+        description: Type of discount scopes
+        type: query
+      - in: query
+        name: ticket_group_id
+        description: ID of the ticket group
+        type: query
+      - in: query
+        name: type
+        description: Filter discounts with a specific discount type set
+        type: query
+      responses:
+        200:
+          description: OK
+      tags:
+      - Users
+      - :user
+      - Discounts
+  /event_list_discounts:
+    get:
+      summary: Get Event List Discounts
+      description: This method returns a list of discounts for a given event.
+      operationId: Get_event_list_discounts_
+      x-api-path-slug: event-list-discounts-get
+      parameters:
+      - in: query
+        name: data-type
+        description: xml or json data-types are supported
+      - in: query
+        name: id
+        description: The ID of the event
+      responses:
+        200:
+          description: OK
+      tags:
+      - Event
+      - List
       - Discounts
 x-streamrank:
   polling_total_time_average: 0

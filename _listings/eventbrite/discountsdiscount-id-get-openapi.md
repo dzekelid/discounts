@@ -6,8 +6,8 @@ info:
   title: Eventbrite Get Discounts Discount
   description: Returns the cross_event_discount with the specified :discount_id.
   version: 1.0.0
-host: www.eventbriteapi.com
-basePath: /v3
+host: www.eventbrite.com
+basePath: /%7Bdata-type%7D/
 schemes:
 - http
 produces:
@@ -26,7 +26,7 @@ paths:
           description: OK
       tags:
       - Discounts
-      - Discount
+      - :discount
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
