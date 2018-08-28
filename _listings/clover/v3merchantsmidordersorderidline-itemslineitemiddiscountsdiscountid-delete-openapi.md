@@ -1,9 +1,11 @@
+---
 swagger: "2.0"
 x-collection-name: Clover
-x-complete: 1
+x-complete: 0
 info:
-  title: ""
+  title: Clover Delete a discount
   version: 1.0.0
+  description: Delete a discount.
 host: /merchants
 basePath: https://api.clover.com
 schemes:
@@ -153,103 +155,17 @@ paths:
       - LineItemId
       - Discounts
       - DiscountId
-  /v3/merchants/{mId}/discounts:
-    get:
-      summary: Get all discounts
-      description: Get all discounts.
-      operationId: GetDiscounts
-      x-api-path-slug: v3merchantsmiddiscounts-get
-      parameters:
-      - in: query
-        name: filter
-        description: 'Filter fields: [id, amount, percentage, modifiedtime]'
-      - in: path
-        name: mId
-        description: Merchant Id
-      responses:
-        200:
-          description: OK
-      tags:
-      - Merchants
-      - Discounts
-    post:
-      summary: Create an discount
-      description: Create an discount.
-      operationId: CreateDiscount
-      x-api-path-slug: v3merchantsmiddiscounts-post
-      parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/holder'
-      - in: path
-        name: mId
-        description: Merchant Id
-      responses:
-        200:
-          description: OK
-      tags:
-      - Merchants
-      - Discounts
-  /v3/merchants/{mId}/discounts/{discountId}:
-    get:
-      summary: Get a single discount
-      description: Get a single discount.
-      operationId: GetDiscount
-      x-api-path-slug: v3merchantsmiddiscountsdiscountid-get
-      parameters:
-      - in: path
-        name: discountId
-        description: Discount Id
-      - in: path
-        name: mId
-        description: Merchant Id
-      responses:
-        200:
-          description: OK
-      tags:
-      - Merchants
-      - Discounts
-      - DiscountId
-    post:
-      summary: Update an discount
-      description: Update an discount.
-      operationId: UpdateDiscount
-      x-api-path-slug: v3merchantsmiddiscountsdiscountid-post
-      parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/holder'
-      - in: path
-        name: discountId
-        description: Discount Id
-      - in: path
-        name: mId
-        description: Merchant Id
-      responses:
-        200:
-          description: OK
-      tags:
-      - Merchants
-      - Discounts
-      - DiscountId
-    delete:
-      summary: Delete a discount
-      description: Delete a discount.
-      operationId: DeleteDiscount
-      x-api-path-slug: v3merchantsmiddiscountsdiscountid-delete
-      parameters:
-      - in: path
-        name: discountId
-        description: Discount Id
-      - in: path
-        name: mId
-        description: Merchant Id
-      responses:
-        200:
-          description: OK
-      tags:
-      - Merchants
-      - Discounts
-      - DiscountId
+x-streamrank:
+  polling_total_time_average: 0
+  polling_size_download_average: 0
+  streaming_total_time_average: 0
+  streaming_size_download_average: 0
+  change_yes: 0
+  change_no: 0
+  time_percentage: 0
+  size_percentage: 0
+  change_percentage: 0
+  last_run: ""
+  days_run: 0
+  minute_run: 0
+---
